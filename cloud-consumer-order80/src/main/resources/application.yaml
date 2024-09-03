@@ -1,0 +1,16 @@
+server:
+  port: 80
+
+# ==========applicationName + druid-mysql8 driver===================
+spring:
+  application:
+    name: cloud-consumer-service
+
+  ####Spring Cloud Consul for Service Discovery
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        prefer-ip-address: true
+        service-name: ${spring.application.name}
